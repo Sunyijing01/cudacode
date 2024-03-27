@@ -76,14 +76,14 @@ __global__ void reset_data(int* data_streaming, int const* lut_persistent, size_
 
 __global__ void vectorAdd(const float *A, const float *B, float *C, int numElements) {
   int i = blockDim.x * blockIdx.x + threadIdx.x;
-  int p = 0;
+  float p = 100;
 
   if (i < numElements) {
-	for (int j = 0; j < 1000000; j++){
-		p = p + 1;
+	for (int j = 0; j < 100000; j++){
+		p = p / 2.0;
 	}
-	for (int j = 0; j < 1000000; j++){
-		p = p - 1;
+	for (int j = 0; j < 100000; j++){
+		p = p * 2.0;
 	}
     C[i] = A[i] + B[i] + p;
   }
