@@ -26,7 +26,7 @@
 
 // GPU benchmarks
 #include "benchmarks.cuh"
-#include "s.h"
+
 
 //#define PRINT_ALL
 
