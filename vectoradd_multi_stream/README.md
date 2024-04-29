@@ -12,4 +12,4 @@ stream2 HtoD vecterADD DtoH
 
 nvcc -I /usr/local/cuda-11.4/samples/common/inc l2.cu -o l2
 
-nsys profile ./l2
+nsys profile -o output ./l2
