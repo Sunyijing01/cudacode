@@ -32,10 +32,20 @@ void checkLast(char const* const file, int const line)
     }
 }
 
-static __device__ __inline__ uint32_t __mysmid(){
-  uint32_t ssmid;
+// 定义一个静态设备内联函数__mysmid来获取当前线程块的SM ID
+static __device__ __inline__ uint32_t __mysmid()
+{
+  uint32_t ssmid;  // 定义一个变量来存储SM ID
+
+  // 使用内联汇编获取SM ID
+  // "mov.u32"是将SM ID赋值给ssmid的汇编指令
+  // %0是输出操作数，对应的C变量是ssmid
+  // %%smid是特殊的CUDA汇编寄存器，存储当前的SM ID
   asm volatile("mov.u32 %0, %%smid;" : "=r"(ssmid));
-  return ssmid;}
+
+  // 返回获得的SM ID
+  return ssmid;
+}
  
 static __device__ __inline__ uint32_t __mywarpid(){
   uint32_t warpid;
