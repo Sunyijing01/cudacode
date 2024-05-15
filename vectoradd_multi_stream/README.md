@@ -1,5 +1,5 @@
 # cudacode
-l2.cu使用两个stream运行两个kernel
+parallel.cu使用两个stream运行两个kernel
 
 stream1 HtoD vecterADD DtoH
 
