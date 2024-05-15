@@ -10,6 +10,6 @@ stream2 HtoD vecterADD DtoH
 
 运行
 
-nvcc -I /usr/local/cuda-11.4/samples/common/inc l2.cu -o l2
+nvcc -I /usr/local/cuda-11.4/samples/common/inc parallel.cu -o parallel
 
-nsys profile -o output ./l2
+nsys profile -o output ./parallel
